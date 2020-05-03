@@ -1,0 +1,36 @@
+﻿<Window x:Class="TaskMan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskMan"
+        mc:Ignorable="d"
+        Title="Диспетчер задач" Height="350" Width="200" ResizeMode="NoResize">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.New"
+                        Executed="CommandBinding_Executed"
+                        CanExecute="CommandBinding_CanExecute"
+                        >
+
+        </CommandBinding>
+
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Command="ApplicationCommands.New"
+                    Gesture="Alt+L"/>
+
+    </Window.InputBindings>
+    <StackPanel>
+        <WrapPanel>
+            <Button Name="btnBlock" Content="Блокировка/разблокировка" Width="160" Height="25"  Click="btnBlock_Click"/>
+            <Button Name="btnRunAs" Content="RA" Width="20" Height="25" Click="btnRunAs_Click"/>
+        </WrapPanel>
+        
+        <ListView  Width="190" Height="210"/>
+        <Button Name="btnWord" Content="Word" Width="190" Height="25" Click="btnWord_Click"/>
+        <Button Name="btnExcel" Content="Excel" Width="190" Height="25" Click="btnExcel_Click"/>
+        <Button Name="btnCalc" Content="Калькулятор" Width="190" Height="25" Click="btnCalc_Click"/>
+        
+    </StackPanel>
+</Window>
