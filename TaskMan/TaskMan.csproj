@@ -91,6 +91,9 @@
     <Compile Include="Blocking.xaml.cs">
       <DependentUpon>Blocking.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Blocking10.xaml.cs">
+      <DependentUpon>Blocking10.xaml</DependentUpon>
+    </Compile>
     <Compile Include="clShareNet.cs" />
     <Compile Include="clUnBlock.cs" />
     <Compile Include="log.cs" />
@@ -99,6 +102,10 @@
       <DependentUpon>winLogin.xaml</DependentUpon>
     </Compile>
     <Page Include="Blocking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Blocking10.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

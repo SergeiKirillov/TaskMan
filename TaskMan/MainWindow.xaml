@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TaskMan"
         mc:Ignorable="d"
-        Title="Диспетчер задач" Height="350" Width="200" ResizeMode="NoResize">
+        Title="Диспетчер задач" Height="150" Width="200" ResizeMode="NoResize" Margin="0,-4,0,0">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.New"
                         Executed="CommandBinding_Executed"
@@ -23,11 +23,11 @@
     </Window.InputBindings>
     <StackPanel>
         <WrapPanel>
-            <Button Name="btnBlock" Content="Блокировка/разблокировка" Width="160" Height="25"  Click="btnBlock_Click"/>
-            <Button Name="btnRunAs" Content="RA" Width="20" Height="25" Click="btnRunAs_Click"/>
+            <Button Name="btnBlock" Content="Блокировка/разблокировка"  Width="190" Height="25"  Click="btnBlock_Click"/>
+            <Button Name="btnRunAs" Content="RA" Width="1" Height="25" Click="btnRunAs_Click" IsEnabled="False" Visibility="Hidden"/>
         </WrapPanel>
         
-        <ListView  Width="190" Height="210"/>
+        <ListView  Width="190" Height="20"/>
         <Button Name="btnWord" Content="Word" Width="190" Height="25" Click="btnWord_Click"/>
         <Button Name="btnExcel" Content="Excel" Width="190" Height="25" Click="btnExcel_Click"/>
         <Button Name="btnCalc" Content="Калькулятор" Width="190" Height="25" Click="btnCalc_Click"/>

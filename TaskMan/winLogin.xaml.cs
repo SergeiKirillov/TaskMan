@@ -54,7 +54,7 @@ namespace TaskMan
             else
             {
                 log.writeLog("Пароль не правильный");
-                MessageBox.Show("Пароль не правильный");
+                MessageBox.Show("Пароль не правильный.Сегодня " + DateTime.Now.ToString("ddMMyyyy"));
                 logCheck = false;
             }
 

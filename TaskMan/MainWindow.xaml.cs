@@ -43,8 +43,20 @@ namespace TaskMan
 
         private void btnBlock_Click(object sender, RoutedEventArgs e)
         {
-            Blocking Reg = new Blocking();
-            Reg.ShowDialog();
+            bool WinVer10 = true;
+            if (WinVer10)
+            {
+                Blocking10 Reg = new Blocking10();
+                Reg.ShowDialog();
+            }
+            else
+            {
+                Blocking Reg = new Blocking();
+                Reg.ShowDialog();
+            }
+
+            
+
 
         }
 
