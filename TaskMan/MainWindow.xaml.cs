@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Timers;
 using System.Diagnostics;
 using System.Reflection;
+using Microsoft.Win32;
 
 namespace TaskMan
 {
@@ -34,12 +35,47 @@ namespace TaskMan
 
             log.writeLog("Программа запущена");
 
-            
+            OperatingSystem os_info = System.Environment.OSVersion;
+            string OSVersion = os_info.VersionString +  "\n\nWindows " + GetOsName(os_info);
+
+            if (IsWindows10())
+            {
+                MessageBox.Show("Windows 10");
+            }
+            else
+            {
+                MessageBox.Show("Windows not 10");
+            }
+
         }
 
-        
+        // Return the OS name.
+        private string GetOsName(OperatingSystem os_info)
+        {
+            string version =
+                os_info.Version.Major.ToString() + "." +
+                os_info.Version.Minor.ToString();
+            switch (version)
+            {
+                case "10.0": return "10/Server 2016";
+                case "6.3": return "8.1/Server 2012 R2";
+                case "6.2": return "8/Server 2012";
+                case "6.1": return "7/Server 2008 R2";
+                case "6.0": return "Server 2008/Vista";
+                case "5.2": return "Server 2003 R2/Server 2003/XP 64-Bit Edition";
+                case "5.1": return "XP";
+                case "5.0": return "2000";
+            }
+            return "Unknown";
+        }
 
-       
+        private bool IsWindows10()
+        {
+            var reg = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+            string productName = (string)reg.GetValue("ProductName");
+            return productName.StartsWith("Windows 10");
+        }
+
 
         private void btnBlock_Click(object sender, RoutedEventArgs e)
         {
