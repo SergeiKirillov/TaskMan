@@ -35,10 +35,22 @@ namespace TaskMan
 
             log.writeLog("Программа запущена");
 
-            OperatingSystem os_info = System.Environment.OSVersion;
-            string OSVersion = os_info.VersionString +  "\n\nWindows " + GetOsName(os_info);
+            //// Ver 1
+            //OperatingSystem os_info = System.Environment.OSVersion;
+            //string OSVersion = os_info.VersionString +  "\n\nWindows " + GetOsName(os_info);
 
-            if (IsWindows10())
+            //// Ver 2
+            //if (IsWindows10())
+            //{
+            //    MessageBox.Show("Windows 10");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Windows not 10");
+            //}
+
+            //Ver 3
+            if (strIsWindows10().Contains("Windows 10"))
             {
                 MessageBox.Show("Windows 10");
             }
@@ -46,7 +58,6 @@ namespace TaskMan
             {
                 MessageBox.Show("Windows not 10");
             }
-
         }
 
         // Return the OS name.
@@ -76,6 +87,12 @@ namespace TaskMan
             return productName.StartsWith("Windows 10");
         }
 
+        private string strIsWindows10()
+        {
+            var reg = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
+            string productName = (string)reg.GetValue("ProductName");
+            return productName;
+        }
 
         private void btnBlock_Click(object sender, RoutedEventArgs e)
         {
