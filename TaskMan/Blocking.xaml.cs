@@ -143,7 +143,7 @@ namespace TaskMan
 
             #endregion
 
-            #region Блокировка заРаз ver3
+            #region РазБлокировка заРаз ver3
 
             MessageBox.Show("После применения необходимо сделать выход/вход.", "Unbloking....(5сек)", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 

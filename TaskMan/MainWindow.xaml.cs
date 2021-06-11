@@ -25,6 +25,7 @@ namespace TaskMan
     public partial class MainWindow : Window
     {
         bool bloginA;
+        string strVerOs;
 
         public object Current { get; private set; }
 
@@ -49,15 +50,27 @@ namespace TaskMan
             //    MessageBox.Show("Windows not 10");
             //}
 
-            //Ver 3
-            if (strIsWindows10().Contains("Windows 10"))
-            {
-                MessageBox.Show("Windows 10");
-            }
-            else
-            {
-                MessageBox.Show("Windows not 10");
-            }
+            ////Ver 3
+            //if (strIsWindows().Contains("Windows 10"))
+            //{
+            //    strVerOs = "Windows 10";
+            //}
+            //else if (strIsWindows().Contains("Windows 7"))
+            //{
+            //    strVerOs = "Windows 7";
+            //}
+            //else if (strIsWindows().Contains("Windows Embedded 8"))
+            //{
+            //    strVerOs = "Windows 8";
+            //}
+            //else if (strIsWindows().Contains("Windows XP"))
+            //{
+            //    strVerOs = "Windows XP";
+            //}
+            //else
+            //{
+            //    strVerOs = "Windows";
+            //}
         }
 
         // Return the OS name.
@@ -87,7 +100,7 @@ namespace TaskMan
             return productName.StartsWith("Windows 10");
         }
 
-        private string strIsWindows10()
+        private string strIsWindows()
         {
             var reg = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion");
             string productName = (string)reg.GetValue("ProductName");
@@ -96,19 +109,31 @@ namespace TaskMan
 
         private void btnBlock_Click(object sender, RoutedEventArgs e)
         {
-            bool WinVer10 = true;
-            if (WinVer10)
+            //bool WinVer10 = strVerOs.StartsWith("Windows 10");
+            //if (WinVer10)
+            //{
+            //    Blocking10 Reg = new Blocking10();
+            //    Reg.ShowDialog();
+            //}
+            //else
+            //{
+            //    Blocking Reg = new Blocking();
+            //    Reg.ShowDialog();
+            //}
+
+            //ver 2
+            if (strIsWindows().Contains("Windows 10"))
             {
                 Blocking10 Reg = new Blocking10();
                 Reg.ShowDialog();
             }
-            else
+            else 
             {
                 Blocking Reg = new Blocking();
                 Reg.ShowDialog();
             }
-
             
+
 
 
         }

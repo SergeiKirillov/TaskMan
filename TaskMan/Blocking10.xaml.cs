@@ -22,5 +22,19 @@ namespace TaskMan
         {
             InitializeComponent();
         }
+
+        private void BtnOK_Click(object sender, RoutedEventArgs e)
+        {
+
+            Application.Current.Windows[Application.Current.Windows.Count - 1].Close();
+            Blocking Reg = new Blocking();
+            Reg.ShowDialog();
+            
+        }
+
+        private void BtnNo_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Windows[Application.Current.Windows.Count - 1].Close();
+        }
     }
 }

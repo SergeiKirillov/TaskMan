@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="Blocking10" Height="450" Width="800">
     <Grid>
-        
+        <Label Name="lblContent" HorizontalAlignment="Center" VerticalAlignment="Center"  FontSize="30" Content="Для windows 10 на стадии разработки" Foreground="#FFEC0D0D" />
+        <DockPanel>
+            <Label Content="Применить блокировки для OS ранних версий?" Width="380" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontSize="16"/>
+            <Button Content="Да" Name="btnOK" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="BtnOK_Click"/>
+            <Button Content="Нет" Name="btnNo" Width="100" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="BtnNo_Click"/>
+        </DockPanel>
     </Grid>
 </Window>
